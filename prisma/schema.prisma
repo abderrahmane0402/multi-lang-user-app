@@ -1,0 +1,311 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model anne {
+  anne                       DateTime  @id @db.Date
+  bac_bac_anneToanne         bac[]     @relation("bac_anneToanne")
+  diplome_diplome_anneToanne diplome[] @relation("diplome_anneToanne")
+}
+
+model anne_universitaire {
+  id_annee            Int    @id
+  annee_universitaire String @unique @db.VarChar(255)
+  note                note[]
+}
+
+model asso_11 {
+  libelle    String  @db.VarChar(255)
+  url        String  @db.VarChar(255)
+  droitacces String? @db.VarChar(255)
+  role       role    @relation(fields: [libelle], references: [libelle], onDelete: NoAction, onUpdate: NoAction)
+  page       page    @relation(fields: [url], references: [url], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([libelle, url])
+}
+
+model asso_17 {
+  id              Int
+  idetablissement BigInt
+  condidat        condidat     @relation(fields: [id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  etablisement    etablisement @relation(fields: [idetablissement], references: [idetablissement], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([id, idetablissement])
+}
+
+model asso_19 {
+  idetablissement BigInt
+  libelle         String       @db.VarChar(255)
+  etablisement    etablisement @relation(fields: [idetablissement], references: [idetablissement], onDelete: NoAction, onUpdate: NoAction)
+  specialite      specialite   @relation(fields: [libelle], references: [libelle], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([idetablissement, libelle])
+}
+
+model asso_28 {
+  libelle    String     @db.VarChar(255)
+  id_license Int
+  license    license    @relation(fields: [id_license], references: [id_license], onDelete: NoAction, onUpdate: NoAction)
+  specialite specialite @relation(fields: [libelle], references: [libelle], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([libelle, id_license])
+}
+
+model bac {
+  id                  Int
+  idbac               BigInt
+  moyenne             Float?
+  id_province         Int
+  libelle             String         @db.VarChar(255)
+  id_etablissementsq  BigInt
+  id_specialite       BigInt
+  anne                DateTime       @db.Date
+  anne_bac_anneToanne anne           @relation("bac_anneToanne", fields: [anne], references: [anne], onDelete: NoAction, onUpdate: NoAction)
+  condidat            condidat       @relation(fields: [id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  etablisementsq      etablisementsq @relation(fields: [id_province, libelle, id_etablissementsq], references: [id_province, libelle_1, id_etablissementsq], onDelete: NoAction, onUpdate: NoAction)
+  specialite_bac      specialite_bac @relation(fields: [id_specialite], references: [id_specialite], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([id, idbac])
+}
+
+model choisir {
+  id_condidature BigInt
+  id_concours    BigInt
+  priorite       Int?        @db.SmallInt
+  concours       concours    @relation(fields: [id_concours], references: [id_concours], onDelete: NoAction, onUpdate: NoAction)
+  condidature    condidature @relation(fields: [id_condidature], references: [id_condidature], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([id_condidature, id_concours])
+}
+
+model concours {
+  id_concours            BigInt                   @id
+  date_concours          DateTime?                @db.Date
+  date_preinscription    DateTime?                @db.Date
+  date_preselection      DateTime?                @db.Date
+  nbr_demander           String?                  @db.VarChar(50)
+  etat                   String?                  @db.VarChar(255)
+  id_license             Int
+  choisir                choisir[]
+  license                license                  @relation(fields: [id_license], references: [id_license], onDelete: NoAction, onUpdate: NoAction)
+  historisation_concours historisation_concours[]
+}
+
+model condidat {
+  id             Int         @id
+  cne            String?     @db.VarChar(250)
+  cin            String?     @db.VarChar(255)
+  adresse        String?     @db.VarChar(255)
+  date_n         DateTime?   @db.Date
+  id_condidature BigInt
+  asso_17        asso_17[]
+  bac            bac[]
+  condidature    condidature @relation(fields: [id_condidature], references: [id_condidature], onDelete: NoAction, onUpdate: NoAction)
+  personne       personne    @relation(fields: [id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  diplome        diplome[]
+}
+
+model condidature {
+  id_condidature            BigInt                      @id
+  etat                      String?                     @db.VarChar(255)
+  choisir                   choisir[]
+  condidat                  condidat[]
+  dossier                   dossier[]
+  historisation_condidature historisation_condidature[]
+}
+
+model date_modification {
+  id_date                   Int                         @id
+  date_modification         DateTime                    @db.Timestamp(6)
+  historisation_concours    historisation_concours[]
+  historisation_condidature historisation_condidature[]
+}
+
+model deparetement {
+  libelle_deparetement String    @id @db.VarChar(50)
+  license              license[]
+}
+
+model diplome {
+  id                      Int
+  id_diplome              Int
+  anne                    DateTime     @db.Date
+  libelle                 String       @db.VarChar(255)
+  idetablissement         BigInt
+  anne_diplome_anneToanne anne         @relation("diplome_anneToanne", fields: [anne], references: [anne], onDelete: NoAction, onUpdate: NoAction)
+  condidat                condidat     @relation(fields: [id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  etablisement            etablisement @relation(fields: [idetablissement], references: [idetablissement], onDelete: NoAction, onUpdate: NoAction)
+  specialite              specialite   @relation(fields: [libelle], references: [libelle], onDelete: NoAction, onUpdate: NoAction)
+  note                    note[]
+
+  @@id([id, id_diplome])
+}
+
+model dossier {
+  id_dossier           BigInt                @id
+  id_condidature       BigInt
+  condidature          condidature           @relation(fields: [id_condidature], references: [id_condidature], onDelete: NoAction, onUpdate: NoAction)
+  dossier_concours     dossier_concours[]
+  dossier_electronique dossier_electronique?
+  dossier_physic       dossier_physic?
+}
+
+model dossier_concours {
+  id_dossier_concours BigInt  @id
+  id_dossier          BigInt
+  dossier             dossier @relation(fields: [id_dossier], references: [id_dossier], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model dossier_electronique {
+  id_dossier              BigInt  @unique
+  id_dossier_electronique BigInt
+  dossier                 dossier @relation(fields: [id_dossier], references: [id_dossier], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([id_dossier, id_dossier_electronique])
+}
+
+model dossier_physic {
+  id_dossier        BigInt  @unique
+  id_dossier_physic BigInt
+  dossier           dossier @relation(fields: [id_dossier], references: [id_dossier], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([id_dossier, id_dossier_physic])
+}
+
+model etablisement {
+  idetablissement  BigInt       @id
+  nometablissement String?      @db.VarChar(255)
+  libelle          String       @db.VarChar(255)
+  asso_17          asso_17[]
+  asso_19          asso_19[]
+  diplome          diplome[]
+  type_diplome     type_diplome @relation(fields: [libelle], references: [libelle], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model etablisementsq {
+  id_province        Int
+  libelle_1          String @db.VarChar(255)
+  id_etablissementsq BigInt
+  libelle            String @unique @db.VarChar(255)
+  bac                bac[]
+  ville              ville  @relation(fields: [id_province, libelle_1], references: [id_province, libelle], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([id_province, libelle_1, id_etablissementsq])
+}
+
+model historisation_concours {
+  id_concours                BigInt
+  id_date                    Int
+  date_concours_ancien       DateTime?         @db.Date
+  date_preinscription_ancien DateTime?         @db.Date
+  date_inscription_ancien    DateTime?         @db.Date
+  etat                       String?           @db.VarChar(255)
+  concours                   concours          @relation(fields: [id_concours], references: [id_concours], onDelete: NoAction, onUpdate: NoAction)
+  date_modification          date_modification @relation(fields: [id_date], references: [id_date], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([id_concours, id_date])
+}
+
+model historisation_condidature {
+  id                Int
+  id_condidature    BigInt
+  id_date           Int
+  etat              String?           @db.VarChar(255)
+  condidature       condidature       @relation(fields: [id_condidature], references: [id_condidature], onDelete: NoAction, onUpdate: NoAction)
+  date_modification date_modification @relation(fields: [id_date], references: [id_date], onDelete: NoAction, onUpdate: NoAction)
+  personne          personne          @relation(fields: [id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([id, id_condidature, id_date])
+}
+
+model license {
+  id_license           Int          @id
+  libelle              String?      @db.VarChar(255)
+  libelle_deparetement String       @db.VarChar(50)
+  asso_28              asso_28[]
+  concours             concours[]
+  deparetement         deparetement @relation(fields: [libelle_deparetement], references: [libelle_deparetement], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model note {
+  id                 Int
+  id_diplome         Int
+  id_note            BigInt
+  classement         Int?
+  note               Float?
+  nbretudiants       BigInt?
+  type               String?             @db.VarChar(255)
+  id_annee           Int?
+  anne_universitaire anne_universitaire? @relation(fields: [id_annee], references: [id_annee], onDelete: NoAction, onUpdate: NoAction)
+  diplome            diplome             @relation(fields: [id, id_diplome], references: [id, id_diplome], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([id, id_diplome, id_note])
+}
+
+model page {
+  url        String    @id @db.VarChar(255)
+  url_1      String    @db.VarChar(255)
+  asso_11    asso_11[]
+  page       page      @relation("pageTopage", fields: [url_1], references: [url], onDelete: NoAction, onUpdate: NoAction)
+  other_page page[]    @relation("pageTopage")
+}
+
+model personne {
+  id                        Int                         @id
+  email                     String                      @unique @db.VarChar(255)
+  nom                       String?                     @db.VarChar(255)
+  prenom                    String?                     @db.VarChar(255)
+  telephone                 Int?                        @unique
+  password                  String                      @db.VarChar(255)
+  libelle                   String                      @db.VarChar(255)
+  condidat                  condidat?
+  historisation_condidature historisation_condidature[]
+  role                      role                        @relation(fields: [libelle], references: [libelle], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model province {
+  id_province Int     @id
+  libelle     String  @unique @db.VarChar(255)
+  ville       ville[]
+}
+
+model role {
+  libelle    String     @id @db.VarChar(255)
+  libelle_1  String     @db.VarChar(255)
+  asso_11    asso_11[]
+  personne   personne[]
+  role       role       @relation("roleTorole", fields: [libelle_1], references: [libelle], onDelete: NoAction, onUpdate: NoAction)
+  other_role role[]     @relation("roleTorole")
+}
+
+model specialite {
+  libelle String    @id @db.VarChar(255)
+  asso_19 asso_19[]
+  asso_28 asso_28[]
+  diplome diplome[]
+}
+
+model specialite_bac {
+  id_specialite BigInt @id
+  libelle       String @db.VarChar(255)
+  bac           bac[]
+}
+
+model type_diplome {
+  libelle      String         @id @db.VarChar(255)
+  etablisement etablisement[]
+}
+
+model ville {
+  id_province    Int
+  libelle        String           @db.VarChar(255)
+  etablisementsq etablisementsq[]
+  province       province         @relation(fields: [id_province], references: [id_province], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([id_province, libelle])
+}
