@@ -5,9 +5,13 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { prisma } from "./prisma"
 import { compare } from "bcrypt"
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/sign-in",
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    strategy: "jwt",
   },
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -22,7 +26,6 @@ const authOptions: NextAuthOptions = {
           return null
         const user = await Auth(credentials.email)
         if (!user) return null
-
         const passwordMatch = await compare(credentials.password, user.password)
 
         if (!passwordMatch) return null
@@ -30,9 +33,28 @@ const authOptions: NextAuthOptions = {
         return {
           id: `${user.id}`,
           email: `${user.email}`,
-          username: user.nom,
+          role: user.role!,
         }
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user)
+        return {
+          ...token,
+          role: user.role,
+        }
+      return token
+    },
+    async session({ session, token }) {
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          role: token.role,
+        },
+      }
+    },
+  },
 }

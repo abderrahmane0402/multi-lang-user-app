@@ -97,16 +97,16 @@ model concours {
 }
 
 model condidat {
-  id             Int         @id
-  cne            String?     @db.VarChar(250)
-  cin            String?     @db.VarChar(255)
-  adresse        String?     @db.VarChar(255)
-  date_n         DateTime?   @db.Date
-  id_condidature BigInt
+  id             Int          @id
+  cne            String?      @db.VarChar(250)
+  cin            String?      @db.VarChar(255)
+  adresse        String?      @db.VarChar(255)
+  date_n         DateTime?    @db.Date
+  id_condidature BigInt?
   asso_17        asso_17[]
   bac            bac[]
-  condidature    condidature @relation(fields: [id_condidature], references: [id_condidature], onDelete: NoAction, onUpdate: NoAction)
-  personne       personne    @relation(fields: [id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  condidature    condidature? @relation(fields: [id_condidature], references: [id_condidature], onDelete: NoAction, onUpdate: NoAction)
+  personne       personne?    @relation(fields: [id], references: [id], onDelete: NoAction, onUpdate: NoAction)
   diplome        diplome[]
 }
 
@@ -249,9 +249,9 @@ model note {
 
 model page {
   url        String    @id @db.VarChar(255)
-  url_1      String    @db.VarChar(255)
+  url_1      String?   @db.VarChar(255)
   asso_11    asso_11[]
-  page       page      @relation("pageTopage", fields: [url_1], references: [url], onDelete: NoAction, onUpdate: NoAction)
+  page       page?     @relation("pageTopage", fields: [url_1], references: [url], onDelete: NoAction, onUpdate: NoAction)
   other_page page[]    @relation("pageTopage")
 }
 
@@ -262,10 +262,10 @@ model personne {
   prenom                    String?                     @db.VarChar(255)
   telephone                 Int?                        @unique
   password                  String                      @db.VarChar(255)
-  libelle                   String                      @db.VarChar(255)
+  libelle                   String?                     @db.VarChar(255)
   condidat                  condidat?
   historisation_condidature historisation_condidature[]
-  role                      role                        @relation(fields: [libelle], references: [libelle], onDelete: NoAction, onUpdate: NoAction)
+  role                      role?                       @relation(fields: [libelle], references: [libelle], onDelete: NoAction, onUpdate: NoAction)
 }
 
 model province {
@@ -276,10 +276,10 @@ model province {
 
 model role {
   libelle    String     @id @db.VarChar(255)
-  libelle_1  String     @db.VarChar(255)
+  libelle_1  String?    @db.VarChar(255)
   asso_11    asso_11[]
   personne   personne[]
-  role       role       @relation("roleTorole", fields: [libelle_1], references: [libelle], onDelete: NoAction, onUpdate: NoAction)
+  role       role?      @relation("roleTorole", fields: [libelle_1], references: [libelle], onDelete: NoAction, onUpdate: NoAction)
   other_role role[]     @relation("roleTorole")
 }
 

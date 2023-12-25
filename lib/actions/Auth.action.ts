@@ -3,11 +3,23 @@
 import { prisma } from "../prisma"
 import { handleError } from "../utils"
 
-export function Auth(email: string) {
+export async function Auth(email: string) {
   try {
-    return prisma.personne.findUnique({
+    return await prisma.personne.findUnique({
       where: {
         email,
+      },
+      include: {
+        role: {
+          include: {
+            asso_11: {
+              select: {
+                url: true,
+                droitacces: true,
+              },
+            },
+          },
+        },
       },
     })
   } catch (error) {
