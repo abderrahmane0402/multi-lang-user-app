@@ -1,0 +1,22 @@
+{
+    
+    "page": {
+        "Layout": {
+            "title": "قصة",
+            "title1": "قصة",
+            "title2": "قصة"  
+        },
+        "admin": {
+            "titre": "",
+            "Condidat": {
+                "titre": "",
+                "sousTitire": ""
+            },
+            "employer": {
+                "titre": "",
+                "sousTitire": ""
+            }
+        }
+        
+    }
+}

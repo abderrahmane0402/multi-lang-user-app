@@ -1,9 +1,12 @@
 "use client"
+import { getDictionary } from "@/lib/dictionary"
 import { pageAcces } from "@/lib/userPermission"
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 
 export default function CondidatPage() {
+  
+
   const router = useRouter()
   const session = useSession()
   if (!session.data?.user) {
@@ -18,7 +21,7 @@ export default function CondidatPage() {
 
   return (
     <div className='text-center'>
-      je suis un {session.data!.user.role.libelle}
+       {session.data!.user.role.libelle}
       <p>{session.data!.user.email}</p>
     </div>
   )
