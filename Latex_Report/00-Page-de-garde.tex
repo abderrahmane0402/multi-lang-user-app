@@ -1,0 +1,82 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\usepackage{xcolor,graphicx}
+\usepackage[top=0.6in,bottom=0.6in,right=1in,left=1in]{geometry}
+\graphicspath{{images/}{images/}}
+\newlength\figureheight
+\newlength\figurewidth
+\usepackage{polyglossia}
+\setmainlanguage{french}
+\setotherlanguage{arabic}
+\newfontfamily\arabicfont[Script=Arabic,Scale=1.1]{Scheherazade New}
+
+\begin{document}
+\begin{titlepage}
+  \centering
+  {\small Royaume du Maroc}\\
+  \begin{Arabic}
+    ٱلْمَمْلَكَة ٱلمَغْرِبِيَّة \\
+  \end{Arabic}
+  \rule{\linewidth}{0.3mm} \\[0.4cm]
+
+  \begin{minipage}{5cm}
+    \begin{center}
+      \includegraphics[width=5cm]{logo.png}
+    \end{center}
+  \end{minipage}\hfill
+  \begin{minipage}{10cm}
+    \begin{flushright}
+      \begin{Arabic}
+        جامعة القاضي عياض \\
+        المدرسة العليا للتكنولوجيا آسفي
+      \end{Arabic}\\
+      \vspace{0.2cm}
+      {\small Universite Cadi Ayyad\\}
+      {\small École Supérieure de Technologie de Safi}\\[0.1cm]
+    \end{flushright}
+  \end{minipage}\hfill\\
+  \vspace{20mm}
+  {\large \bfseries Rapport de Projet}\\[0.5cm]
+  {\large \bfseries{Option : Ingénierie des Systèmes d’information et Réseaux} \\ }
+  \vspace{10mm}
+  % Title
+  \rule{\linewidth}{0.3mm} \\[0.4cm]
+  { \huge \bfseries Élaboration d'une conception pour le projet d'inscription des Licences Professionnelles à l'EST Safi.\\[0.4cm] }
+  \rule{\linewidth}{0.3mm} \\[1cm]
+  \vspace{10mm}
+
+  % Author and supervisor
+  \noindent
+  \begin{minipage}{0.5\textwidth}
+    \begin{flushleft} \large
+      \emph{Réalisé par :}\\
+      M. \textsc{Sabkari} Abderrahmane \\
+      M. \textsc{Rekhla} Zakaria \\
+    \end{flushleft}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \begin{flushright} \large
+      \begin{flushleft} \large
+        % \emph{Encadré par :} \\
+        % Mme. \textsc{Hamdad} Leila  (ESI)\\[0.1cm]
+        % M. \textsc{Kisma} Ahmed  (Djezzy)\\
+      \end{flushleft}
+
+    \end{flushright}
+  \end{minipage}\\[1cm]
+
+  {\large \textit{Soutenu le 15 janvier 2024, Devant le jury composé de : }}\\[0.5cm]
+
+  \centering
+  \begin{tabular}{lll}
+    \large Mme. Arhid \textsc{khadija} \\[0.1cm]
+    \large M. Chekry \textsc{Abderrahman}
+  \end{tabular}
+
+  \vspace{40mm}
+  % Bottom of the page
+  {\large Promotion : 2023/2024}
+
+\end{titlepage}
+\end{document}

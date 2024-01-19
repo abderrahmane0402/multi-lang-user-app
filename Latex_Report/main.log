@@ -1,0 +1,142 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 23.5) (preloaded format=xelatex 2023.6.8)  1 JAN 2024 15:16
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**c:/Users/NONAME/MyProjects/multi-lang-user-app/Latex_Report/main.tex
+(c:/Users/NONAME/MyProjects/multi-lang-user-app/Latex_Report/main.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-05-15> (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
+(C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count181
+\c@chapter=\count182
+\c@section=\count183
+\c@subsection=\count184
+\c@subsubsection=\count185
+\c@paragraph=\count186
+\c@subparagraph=\count187
+\c@figure=\count188
+\c@table=\count189
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+) (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/pythontex\pythontex.sty
+Package: pythontex 2021/06/06 v0.18 execute and typeset Python code and other languages
+ (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/fvextra\fvextra.sty
+Package: fvextra 2023/11/19 v1.6 fvextra - extensions and patches for fancyvrb
+ (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count190
+) (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2023/11/06 4.5b verbatim text (tvz,hv)
+ (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+\FV@CodeLineNo=\count191
+\FV@InFile=\read2
+\FV@TabBox=\box51
+\c@FancyVerbLine=\count192
+\FV@StepNumber=\count193
+\FV@OutFile=\write3
+) (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+ (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)) (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.sty
+Package: lineno 2023/05/20 line numbers on paragraphs v5.3
+Invalid UTF-8 byte or sequence at line 292 replaced by U+FFFD.
+ (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+\linenopenalty=\count194
+\output=\toks17
+\linenoprevgraf=\count195
+\linenumbersep=\dimen141
+\linenumberwidth=\dimen142
+\c@linenumber=\count196
+\c@pagewiselinenumber=\count197
+\c@LN@truepage=\count198
+\c@internallinenumber=\count199
+\c@internallinenumbers=\count266
+\quotelinenumbersep=\dimen143
+\bframerule=\dimen144
+\bframesep=\dimen145
+\bframebox=\box52
+LaTeX Info: Redefining \\ on input line 3180.
+)
+\c@FancyVerbWriteLine=\count267
+\c@FancyVerbBufferIndex=\count268
+\c@FancyVerbBufferLength=\count269
+\c@FancyVerbBufferLine=\count270
+\c@FV@oldbufferlength=\count271
+\c@FV@TrueTabGroupLevel=\count272
+\c@FV@TrueTabCounter=\count273
+\FV@TabBox@Group=\box53
+\FV@TmpLength=\skip50
+\c@FV@HighlightLinesStart=\count274
+\c@FV@HighlightLinesStop=\count275
+\FV@LoopCount=\count276
+\FV@NCharsBox=\box54
+\FV@BreakIndent=\dimen146
+\FV@BreakIndentNChars=\count277
+\FV@BreakSymbolSepLeft=\dimen147
+\FV@BreakSymbolSepLeftNChars=\count278
+\FV@BreakSymbolSepRight=\dimen148
+\FV@BreakSymbolSepRightNChars=\count279
+\FV@BreakSymbolIndentLeft=\dimen149
+\FV@BreakSymbolIndentLeftNChars=\count280
+\FV@BreakSymbolIndentRight=\dimen150
+\FV@BreakSymbolIndentRightNChars=\count281
+\c@FancyVerbLineBreakLast=\count282
+\FV@LineBox=\box55
+\FV@LineIndentBox=\box56
+\c@FV@BreakBufferDepth=\count283
+\FV@LineWidth=\dimen151
+) (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
+\integerpart=\count284
+\decimalpart=\count285
+)
+Package: xstring 2023/01/14 v1.85 String manipulations (CT)
+) (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+ (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks18
+\pgfkeys@temptoks=\toks19
+ (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks20
+)))
+\pgfopts@list@add@a@toks=\toks21
+\pgfopts@list@add@b@toks=\toks22
+) (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/newfloat\newfloat.sty
+Package: newfloat 2023/10/01 v1.2 Defining new floating environments (AR)
+Package newfloat Info: Document class `report' detected (original).
+) (currfile.sty
+Package: currfile 2099/01/01 develop Provides the file path elements of the current input file
+ (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/filehook\filehook.sty
+Package: filehook 2022/10/25 v0.8b Hooks for input files
+ (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/filehook\filehook-2020.sty
+Package: filehook-2020 2022/10/25 v0.8b Hooks for input files
+))
+\c@currfiledepth=\count286
+)
+\pytx@codefile=\write4
+\openout4 = `main.pytxcode'.
+
+\c@pytx@FancyVerbLineTemp=\count287
+\c@pytx@py@default@default=\count288
+\c@pytx@pycon@default@default=\count289
+\c@pytx@sympy@default@default=\count290
+\c@pytx@sympycon@default@default=\count291
+\c@pytx@pylab@default@default=\count292
+\c@pytx@pylabcon@default@default=\count293
+) (C:\Users\NONAME\AppData\Local\Programs\MiKTeX\tex/latex/tex-gyre\tgtermes.sty

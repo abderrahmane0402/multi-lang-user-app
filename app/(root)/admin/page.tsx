@@ -1,9 +1,11 @@
 import { authOptions } from "@/lib/options"
 import { pageAcces } from "@/lib/userPermission"
 import { getServerSession } from "next-auth"
+import { unstable_noStore } from "next/cache"
 import { redirect } from "next/navigation"
 
 export default async function AdminPage() {
+  unstable_noStore()
   const session = await getServerSession(authOptions)
   const result = pageAcces(session!.user.role, "/admin")
   if (!result.acces) redirect("/sign-in")

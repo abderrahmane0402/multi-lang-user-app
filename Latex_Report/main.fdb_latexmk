@@ -1,0 +1,37 @@
+# Fdb version 4
+["xdvipdfmx"] 0 "main.xdv" "main.pdf" "main" 0 -1
+  "main.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "main.pdf"
+  (rewritten before read)
+["xelatex"] 1704118611 "c:/Users/NONAME/MyProjects/multi-lang-user-app/Latex_Report/main.tex" "main.xdv" "main" 1704118719 2
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys.code.tex" 1673775190 39784 414c54e866ebab4b801e2ad81d9b21d8 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex" 1673775190 37433 940bc6d409f1ffd298adfdcaf125dd86 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/generic/xstring/xstring.tex" 1673962217 48215 374fa42173896b227f2f50bc75dfda91 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/base/report.cls" 1669844196 23203 3d69f4661dd74a5edb1507ff18e40fb9 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/base/size12.clo" 1669844196 8449 c314623021fbddd0180c05345324933c ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/base/textcomp.sty" 1669844196 2894 f2f8ee7d4fb94263f9f255fa22cab2d3 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/fancyvrb/fancyvrb.sty" 1700126471 43712 553891a7c69379dcffca9062b2fe36ac ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/filehook/filehook-2020.sty" 1667300759 9005 c47d9138e4a690658bcefab0dd0af8d7 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/fvextra/fvextra.sty" 1700468729 98302 c7a6883015ae93eb05b76b7edce66f91 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty" 1665063979 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty" 1656232881 22555 6d8e155cfef6d82c3d5c742fea7c992e ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys.sty" 1665062733 13815 760b0c02f691ea230f5359c4e1de23a7 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/lineno/lineno.sty" 1686927649 154524 d78e0d3f9a3cdfd2cab61cd321c9281c ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/newfloat/newfloat.sty" 1696188443 30252 f6e8905c538136e67643aa414a2c9161 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfkeys.sty" 1673775190 274 5ae372b7df79135d240456a1c6f2cf9a ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/pgfopts/pgfopts.sty" 1404979838 5540 d5c60cf09c59da351aa4023ed084e4eb ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/times.sty" 1585923171 888 8e0e5c8cca7b18e0400f97f5a2b90a99 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/pythontex/pythontex.sty" 1623141351 68952 91efccb79140bd8819cbbc10269c1908 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/tex-gyre/tgtermes.sty" 1254935040 2211 af9b7d12507105a58a3e8e926996b827 ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/upquote/upquote.sty" 1335531156 1088 517e01cde97c1c0baf72e69d43aa5a2e ""
+  "C:/Users/NONAME/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1673962217 123 a302f2c651a95033260db60e51527ae8 ""
+  "c:/Users/NONAME/MyProjects/multi-lang-user-app/Latex_Report/main.tex" 1704118225 2377 b59e1f2102e59c9e05e92132b345c5fd ""
+  "currfile.sty" 1672060105 17790 072eeeebc8df5163feabf1336234d7be ""
+  "main.aux" 1704118611 34 3985256e7290058c681f74d7a3565a19 "xelatex"
+  "main.tex" 1704118225 2377 b59e1f2102e59c9e05e92132b345c5fd ""
+  (generated)
+  "main.aux"
+  "main.log"
+  "main.xdv"
+  (rewritten before read)
