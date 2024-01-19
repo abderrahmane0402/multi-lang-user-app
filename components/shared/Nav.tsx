@@ -4,10 +4,12 @@ import { Button } from "../ui/button"
 import { usePathname } from "next/navigation"
 import { pageAcces } from "@/lib/userPermission"
 import { useSession } from "next-auth/react"
+import { useLangtStore } from "@/lib/StoreLang"
 
 export default function Navbar() {
   const path = usePathname()
   const session = useSession()
+     const {Lang}= useLangtStore();
   if (session.status == "loading") return <></>
   return (
     <>
